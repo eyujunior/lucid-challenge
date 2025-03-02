@@ -18,6 +18,9 @@ const AutocompleteInput = ({ data }) => {
     const suggestionListRef = useRef(null); // Ref for the suggestion list
 
     const handleChange = (e) => {
+        if (e.target.value === "") {
+            setResult("0.0");
+        }
         const value = e.target.value;
         setInputValue(value);
     };
@@ -133,8 +136,8 @@ const AutocompleteInput = ({ data }) => {
     };
 
     return (
-        <div className="relative flex flex-col gap-4 p-6 bg-gray-50 rounded-lg shadow-lg max-w-md mx-auto">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">Autocomplete Formula Input</h3>
+        <div className="relative flex flex-col gap-4 p-4 sm:p-6 bg-gray-50 rounded-lg shadow-lg">
+            <h3 className="text-xl text-center sm:text-2xl font-bold text-gray-800 mb-4">Autocomplete Formula Input</h3>
             <div className="flex items-center justify-center w-full border border-gray-300 rounded-lg p-2 bg-white relative">
                 {selectedTags?.map((tag, index) => (
                     <span

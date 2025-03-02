@@ -15,8 +15,8 @@ const Body = () => {
     if (isError) return <p>Error loading data.</p>;
 
     return (
-        <div className="p-16 pt-8 rounded-2xl flex items-center justify-center">
-            <div className="w-full max-w-xl">
+        <div className="pt-12 rounded-2xl flex items-center justify-center w-11/12 sm:w-4/5 md:w-1/2 xl:w-1/3 2xl:w-1/3 mx-auto max-w-xl">
+            <div className="w-full">
                 <AutocompleteInput label="Search" data={data} />
             </div>
         </div>
